@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: html-deployment
+  labels:
+    app: html
+spec:
+  replicas: 2
+  selector:
+    matchLabels: 
+      app: html
+  template:
+    metadata:
+      labels:
+        app: html
+    spec: 
+      containers:
+      - name: html-container
+        image: rkreber/html-image:v0.2
+        imagePullPolicy: "Always"
+        ports:
+        - containerPort: 80
