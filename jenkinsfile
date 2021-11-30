@@ -28,7 +28,7 @@ node ("Slave") {
     }
 
     stage('Update K8S Image') {
-        echo 'user kubectl set image to update image for container'
+        echo 'use kubectl set image to update image for container'
         sh '''
             kubectl set image deployment/html-deployment html-container=$image:$BUILD_NUMBER --record
             '''
