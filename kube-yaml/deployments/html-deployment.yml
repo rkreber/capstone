@@ -21,17 +21,3 @@ spec:
         imagePullPolicy: "Always"
         ports:
         - containerPort: 80
-
-## Kubernetes Load Balancer Service
-apiVersion: v1
-kind: Service
-metadata:
-  name: html-lb
-  labels:
-    app: html
-spec: 
-  ports:
-  - port: 80
-  selector:
-    app: html
-  type: LoadBalancer
